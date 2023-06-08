@@ -22,7 +22,7 @@ public class PluginManager {
     private DexClassLoader pluginClassLoader;
     private Resources pluginResource;
     private Context context;
-    private PackageInfo pluginPackageAricheInfo;
+    private PackageInfo pluginPackageArchiveInfo;
 
     private PluginManager() {
     }
@@ -45,7 +45,7 @@ public class PluginManager {
     public void loadApk(String dexPath) {
         pluginClassLoader = new DexClassLoader(dexPath, context.getDir("dex", Context.MODE_PRIVATE).getAbsolutePath(), null, context.getClassLoader());
 
-        pluginPackageAricheInfo = context.getPackageManager().getPackageArchiveInfo(dexPath, PackageManager.GET_ACTIVITIES);
+        pluginPackageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(dexPath, PackageManager.GET_ACTIVITIES);
 
         AssetManager assets = null;
         try {
@@ -74,7 +74,7 @@ public class PluginManager {
     }
 
 
-    public PackageInfo getPluginPackageAricheInfo() {
-        return pluginPackageAricheInfo;
+    public PackageInfo getPluginPackageArchiveInfo() {
+        return pluginPackageArchiveInfo;
     }
 }

@@ -24,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void startPlugin(View view){
         Intent intent=new Intent(this,ProxyActivity.class);
-        String otherapkName=PluginManager.getInstance().getPluginPackageAricheInfo().activities[0].name;
+        String otherapkName=PluginManager.getInstance().getPluginPackageArchiveInfo().activities[0].name;
         intent.putExtra("className",otherapkName);
         startActivity(intent);
     }
 
-
+    // 编译pluginapk工程生成pluginapk-debug.apk之后，执行adb push命令将.apk推到手机上
+    //  adb push D:\Dev\GitHub\AndroidPluginDemo\pluginapk\build\outputs\apk\debug\pluginapk-debug.apk /sdcard
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
