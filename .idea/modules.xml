@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PluginDemo.iml" filepath="$PROJECT_DIR$/PluginDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plugin/plugin.iml" filepath="$PROJECT_DIR$/plugin/plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pluginapk/pluginapk.iml" filepath="$PROJECT_DIR$/pluginapk/pluginapk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidPluginDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidPluginDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidPluginDemo.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/plugin/AndroidPluginDemo.plugin.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.iml" filepath="$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.main.iml" filepath="$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/pluginapk/AndroidPluginDemo.pluginapk.unitTest.iml" />
     </modules>
   </component>
 </project>
