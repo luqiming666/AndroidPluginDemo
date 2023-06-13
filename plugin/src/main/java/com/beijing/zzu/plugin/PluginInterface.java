@@ -1,7 +1,9 @@
 package com.beijing.zzu.plugin;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
+
 
 /**
  * Created by jiayongkai on 2017/9/29.

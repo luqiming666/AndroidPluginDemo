@@ -3,9 +3,9 @@ package com.beijing.zzu.pluginapk;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,7 +19,7 @@ import com.beijing.zzu.plugin.PluginInterface;
  * Created by jiayongkai on 2017/9/29.
  */
 
-public class BaseActivity extends FragmentActivity implements PluginInterface{
+public class BaseActivity extends AppCompatActivity implements PluginInterface{
 
     protected FragmentActivity thisContext;
 
@@ -29,7 +29,7 @@ public class BaseActivity extends FragmentActivity implements PluginInterface{
     }
 
     @Override
-    public void setContentView(@LayoutRes int layoutResID) {
+    public void setContentView(int layoutResID) {
         thisContext.setContentView(layoutResID);
     }
 
@@ -43,7 +43,6 @@ public class BaseActivity extends FragmentActivity implements PluginInterface{
         thisContext.setContentView(view, params);
     }
 
-    @NonNull
     @Override
     public LayoutInflater getLayoutInflater() {
         return thisContext.getLayoutInflater();
