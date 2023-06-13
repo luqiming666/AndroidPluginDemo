@@ -8,7 +8,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="加载插件"
+        android:text="加载并运行插件"
         android:onClick="loadPlugin"/>
 
 

@@ -18,18 +18,18 @@ public class ProxyActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        className=getIntent().getStringExtra("className");
+        className = getIntent().getStringExtra("className");
 
         try {
-            Class<?> aClass=PluginManager.getInstance().getPluginClassLoader().loadClass(className);
+            Class<?> aClass = PluginManager.getInstance().getPluginClassLoader().loadClass(className);
             Object newInstance = aClass.newInstance();
 
             if (newInstance instanceof PluginInterface){
                 Log.d("tag","====="+newInstance);
-                pluginInterface= (PluginInterface) newInstance;
+                pluginInterface = (PluginInterface) newInstance;
                 pluginInterface.attachContext(this);
 
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
                 pluginInterface.onCreate(bundle);
             }
         } catch (ClassNotFoundException e) {

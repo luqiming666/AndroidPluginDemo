@@ -65,6 +65,10 @@ public class PluginManager {
         pluginResource = new Resources(assets, context.getResources().getDisplayMetrics(), context.getResources().getConfiguration());
     }
 
+    public boolean isApkLoaded() {
+        return pluginPackageArchiveInfo != null;
+    }
+
     public Resources getPluginResource() {
         return pluginResource;
     }
@@ -72,7 +76,6 @@ public class PluginManager {
     public DexClassLoader getPluginClassLoader() {
         return pluginClassLoader;
     }
-
 
     public PackageInfo getPluginPackageArchiveInfo() {
         return pluginPackageArchiveInfo;

@@ -2,6 +2,7 @@ package com.beijing.zzu.plugindemo;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -23,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startPlugin(View view){
-        Intent intent=new Intent(this,ProxyActivity.class);
-        String otherapkName=PluginManager.getInstance().getPluginPackageArchiveInfo().activities[0].name;
-        intent.putExtra("className",otherapkName);
+        if (!PluginManager.getInstance().isApkLoaded()) return;
+
+        Intent intent = new Intent(this, ProxyActivity.class);
+        String otherapkName = PluginManager.getInstance().getPluginPackageArchiveInfo().activities[0].name;
+        intent.putExtra("className", otherapkName);
         startActivity(intent);
     }
 
@@ -34,7 +37,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PluginManager.getInstance().setContext(this);
-        PluginManager.getInstance().loadApk(Environment.getExternalStorageDirectory().getAbsolutePath()+"/pluginapk-debug.apk");
+        if (requestCode == 100) {
+            if (grantResults.length > 0 &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                PluginManager.getInstance().setContext(this);
+                PluginManager.getInstance().loadApk(Environment.getExternalStorageDirectory().getAbsolutePath() + "/pluginapk-debug.apk");
+
+                startPlugin(null);
+            }
+        }
     }
 }
