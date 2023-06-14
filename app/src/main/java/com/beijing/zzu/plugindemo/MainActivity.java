@@ -28,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /***
-     编译pluginapk工程生成pluginapk-debug.apk之后，执行adb push命令将.apk推到手机上
-     adb push D:\Dev\GitHub\AndroidPluginDemo\pluginapk\build\outputs\apk\debug\pluginapk-debug.apk /sdcard/Download
+     编译pluginapk工程生成pluginapk-debug.apk之后，手动将其拷贝至 /sdcard/Android/data/com.beijing.zzu.plugindemo/files/ 目录下
+     adb push失败：
+     adb push D:\Dev\GitHub\AndroidPluginDemo\pluginapk\build\outputs\apk\debug\pluginapk-debug.apk /sdcard/Android/data/com.beijing.zzu.plugindemo/files/
 
      注意：在Android高版本上不允许直接访问共享/外部存储设备，如/sdcard，或/sdcard/Download
      https://blog.csdn.net/xiaowang_lj/article/details/128081642
