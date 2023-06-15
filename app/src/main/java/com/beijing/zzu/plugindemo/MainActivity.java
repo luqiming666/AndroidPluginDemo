@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void _loadPlugin() {
         PluginManager.getInstance().setContext(this);
-        PluginManager.getInstance().loadApk(getExternalFilesDir(null).getAbsolutePath() + "/pluginapk-debug.apk");
+        PluginManager.getInstance().loadApk(getExternalFilesDir(null).getAbsolutePath() + "/pluginapk-debug.apk", true);
     }
 
     public void startPlugin(View view) {

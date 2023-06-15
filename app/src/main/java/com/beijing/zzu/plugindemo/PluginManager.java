@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -41,8 +42,14 @@ public class PluginManager {
         this.context = context.getApplicationContext();
     }
 
-    public void loadApk(String dexPath) {
-        pluginClassLoader = new DexClassLoader(dexPath, context.getDir("dex", Context.MODE_PRIVATE).getAbsolutePath(), null, context.getClassLoader());
+    public void loadApk(String dexPath, boolean hasNativeLibs) {
+        String dexOutputPath = context.getDir("dex", Context.MODE_PRIVATE).getAbsolutePath();
+        String libSearchPath = null;
+        if (hasNativeLibs) {
+            libSearchPath = context.getApplicationInfo().nativeLibraryDir;
+            Log.d("tag","librarySearchPath: " + libSearchPath);
+        }
+        pluginClassLoader = new DexClassLoader(dexPath, dexOutputPath, libSearchPath, context.getClassLoader());
 
         pluginPackageArchiveInfo = context.getPackageManager().getPackageArchiveInfo(dexPath, PackageManager.GET_ACTIVITIES);
 

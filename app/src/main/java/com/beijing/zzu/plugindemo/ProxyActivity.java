@@ -12,6 +12,7 @@ public class ProxyActivity extends FragmentActivity {
 
     private  String className;
     private PluginInterface pluginInterface;
+    private boolean usePluginPkg = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,13 @@ public class ProxyActivity extends FragmentActivity {
 
     @Override
     public void startActivity(Intent intent) {
+        usePluginPkg = false;
+
         Intent newIntent = new Intent(this, ProxyActivity.class);
         newIntent.putExtra("className", intent.getComponent().getClassName());
         super.startActivity(newIntent);
+
+        usePluginPkg = true;
     }
 
     /**
@@ -54,6 +59,15 @@ public class ProxyActivity extends FragmentActivity {
     @Override
     public Resources getResources() {
         return PluginManager.getInstance().getPluginResource();
+    }
+
+    @Override
+    public String getPackageName() {
+        if (usePluginPkg) {
+            return PluginManager.getInstance().getPluginPackageArchiveInfo().packageName;
+        } else {
+            return super.getPackageName();
+        }
     }
 
     @Override
